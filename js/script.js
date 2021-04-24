@@ -3,6 +3,7 @@ if (!location.hash) {
 }
 const roomHash = location.hash.substring(1);
 
+
 // TODO: Replace with your own channel ID
 const drone = new ScaleDrone('yiS12Ts5RdNhebyM');
 // Room name needs to be prefixed with 'observable-'
@@ -14,7 +15,6 @@ const configuration = {
 };
 let room;
 let pc;
-
 
 function onSuccess() {};
 function onError(error) {
@@ -110,7 +110,14 @@ function startWebRTC(isOfferer) {
     }
   });
 }
-
+const toggleAudio = (value) => {
+  streamObj.getAudioTracks()[0].enabled = value;
+  setIsAudio(value);
+};
+const toggleVideo = (value) => {
+  streamObj.getVideoTracks()[0].enabled = value;
+  setIsVideo(value);
+};
 function localDescCreated(desc) {
   pc.setLocalDescription(
     desc,
@@ -118,3 +125,53 @@ function localDescCreated(desc) {
     onError
   );
 }
+
+let isAudio = true
+function muteAudio() {
+    isAudio = !isAudio
+    localStream.getAudioTracks()[0].enabled = isAudio
+}
+
+let isVideo = true
+function muteVideo() {
+    isVideo = !isVideo
+    localStream.getVideoTracks()[0].enabled = isVideo
+}
+function screenShare () {
+  navigator.mediaDevices
+    .getDisplayMedia({ cursor: true })
+    .then((screenStream) => {
+      peer.replaceTrack(
+        streamObj.getVideoTracks()[0],
+        screenStream.getVideoTracks()[0],
+        streamObj
+      );
+      setScreenCastStream(screenStream);
+      screenStream.getTracks()[0].onended = () => {
+        peer.replaceTrack(
+          screenStream.getVideoTracks()[0],
+          streamObj.getVideoTracks()[0],
+          streamObj
+        );
+      };
+      setIsPresenting(true);
+    });
+};
+
+function stopScreenShare () {
+  screenCastStream.getVideoTracks().forEach(function (track) {
+    track.stop();
+  });
+  peer.replaceTrack(
+    screenCastStream.getVideoTracks()[0],
+    streamObj.getVideoTracks()[0],
+    streamObj
+  );
+  setIsPresenting(false);
+};
+
+function disconnectCall () {
+  room.destroy();
+  history.push("/index.html");
+  pc.location.reload();
+};
