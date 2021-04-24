@@ -12,6 +12,7 @@ nav{
     padding: 20px;
 }
 nav h1 a{
+    font-weight: bold;
     text-decoration: none;
     color: aquamarine;
     font-size: 24px;
@@ -33,28 +34,33 @@ nav h1 a:hover{
     height: 89.8vh;
     
 }
+.container_link .button_container{
+    margin-top: 20px;
+    width: 100%;
+    margin-left: 25%;
+}
+.button_container a{
+    text-decoration: none;
+}
 .container_link p{
+    margin-left: 22%;
+    width: 100%;
     font-size: 24px;
     font-family: 'Times New Roman', Times, serif;
     padding: 20px;
+    font-weight: bold;
 }
-.container_link a{
-    margin-left: 20px;
-    width: 100px;
-    text-decoration: none;
-    margin-top: 10px;
-}
+
 .container_link a b{
     padding: 10px;
-    color: #fff;
+    color: rgb(0, 0, 0);
     border-radius: 100px;
     font-size: 24px;
-
     font-family: 'Times New Roman', Times, serif;
-    background: rgb(0, 0, 0);
 }
 .container_link a b:hover{
-    opacity: 50%;
+    opacity: 80%;
+    color:aqua;
 }
 .container_images{
     justify-content: center;
@@ -64,4 +70,41 @@ img{
     margin-left: -60px;
     box-shadow: 0 0 3px 0 rgb(0, 0, 0, 0.5);
     padding: 20px;
+}
+.link_hr_l{
+    width: 200px;
+    margin-left: 90px;
+    margin-top: 10px;
+    border-color: rgb(74, 75, 75);
+    box-shadow: 0 0 3px 0 rgb(0, 0, 0, 0.5);
+}
+.lin_hr{
+    border-color: rgb(74, 75, 75);
+    margin-top: -2px;
+    width: 200px;
+    margin-left: 90%;
+    box-shadow: 0 0 3px 0 rgb(0, 0, 0, 0.5);
+}
+.video_express{
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 110px;
+    box-shadow: 0 0 3px 0 rgb(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 960px){
+    .contenedor_grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .container_link{
+        width: 40vh;
+        height: 89.8vh;
+    }
+    img{
+        margin-top: -50px;
+        margin-left: 35px;
+        box-shadow: 0 0 3px 0 rgb(0, 0, 0, 0.5);
+        padding: 20px;
+        width:80%;
+    }
 }
