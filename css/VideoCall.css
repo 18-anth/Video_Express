@@ -10,6 +10,7 @@
   video {
     width: auto;
     height: auto;
+    margin-left: 30px;
     box-sizing: border-box;
     border-radius: 2px;
     
