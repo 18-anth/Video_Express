@@ -1,0 +1,72 @@
+
+.wrap {
+	width: 50%;
+	max-width: 500px;
+	/*margin:auto;*/
+}
+
+.widget {
+	
+	width: 100%;
+	margin: 2em;
+	/*margin:32px; */
+}
+.widget p {
+	display: inline-block;
+	line-height: 1em;
+}
+
+.fecha {
+	margin-top: -5%;
+	font-family: 'Times New Roman', Times, serif;
+	text-align: center;
+	font-size:18px;
+	margin-bottom: 0.3125rem;
+	/*margin-bottom: 5px;*/
+
+	padding: 10px;
+	width: 50%;
+	
+}
+
+.reloj {
+	font-family: 'Times New Roman', Times, serif;
+	padding: 10px;
+	width: 40%;
+	box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
+	margin-left: 80%;
+	margin-top: -10%;
+	font-size: 2em;
+	text-align: center;
+	display: flex;
+	font-weight: bold;
+	color: rgb(2, 2, 2);
+	border-radius: 100px;
+	
+}
+.reloj .segundos,
+.reloj .ampm {
+	font-size: 2rem;
+	display: flex;
+}
+.ampm {
+	margin-left: 20px;
+}
+@media screen and (max-width: 960px){
+	.reloj .segundos,
+	.reloj .ampm {
+		font-size: 1em;
+	}
+	.reloj {
+		width: 50%;
+		margin-top: -25%;
+		font-size: 1em;
+	}
+	.fecha {
+		font-size:10px;
+		margin-top: -10%;
+	}
+}
+
+
+

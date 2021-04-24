@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <header>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js" integrity="sha512-hkvXFLlESjeYENO4CNi69z3A1puvONQV5Uh+G4TUDayZxSLyic5Kba9hhuiNLbHqdnKNMk2PxXKm0v7KDnWkYA==" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" type="image/x-icon" href="img/video_express.ico" >
@@ -10,54 +10,50 @@
   <script src="https://kit.fontawesome.com/61f7849f71.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   <link href="./css/VideoCall.css" rel="stylesheet">
+  <link href="./css/hora.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js" integrity="sha512-hkvXFLlESjeYENO4CNi69z3A1puvONQV5Uh+G4TUDayZxSLyic5Kba9hhuiNLbHqdnKNMk2PxXKm0v7KDnWkYA==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA==" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
 </header>
 <body>
-  <div class="copy">Send your URL to a friend to start a video call</div>
+  <nav class="logo">
+    <img class="logo_express" src="img/video_express.png"
+     width="32px" height="32px">
+     <div class="wrap">
+      <div class="widget">
+        <div class="fecha">
+          <p id="diaSemana" class="diaSemana">Martes</p>
+          <p id="dia" class="dia">27</p>
+          <p>de </p>
+          <p id="mes" class="mes">Octubre</p>
+          <p>del </p>
+          <p id="year" class="year">2015</p>
+        </div>
+    
+        <div class="reloj">
+          <p id="horas" class="horas">11</p>
+          <p>:</p>
+          <p id="minutos" class="minutos">48</p>
+          <p>:</p>
+          <p id="segundos" class="segundos">12</p>
+          <p id="ampm" class="ampm">AM</p>
+   
+        </div>
+      </div>
+    </div>
+  </nav>
   <div class="video_container">
     <video id="localVideo" autoplay muted></video>
     <video id="remoteVideo" autoplay></video>
+    
   </div>
   <div id="popup">
-    <div class="header-area">
-			<h1>Chat</h1>
-		</div>
-    <div class="message-area" id="message-area">
-			<!-- <div class="message-box others-message-box">
-				<div class="message others-message"> Hi, How are you? </div>
-				<div class="separator"></div>
-			</div>
-			
-			<div class="message-box my-message-box">
-				<div class="message my-message"> I am good, how are you doing? </div>
-				<div class="separator"></div>
-			</div> -->
-		</div>
-		
-		<div class="typing-area">
-      <img  src="img/1497560833-smiley-18_85059.png"
-      width="32px" height="32px"  onclick="sendMessage()"
-      class="airplane_send"
-      >
-			<textarea class="typing-box" id="typing-box"></textarea>
-      <img  src="img/paperairplane_120795.png"
-      width="32px" height="32px"  onclick="sendMessage()"
-      class="airplane_send"
-      >
-    </div>
+    <img src="https://www.mediafire.com/file/rq0r9rvojemscz9/asombra2.gif/file">
   </div>
   <div id="emoticones">
-    <h1>Emojin</h1>
-    <img src="img/1497560833-smiley-18_85059.png" width="32px" height="32px">
-    <h2>Redes Sociales</h2>
-    <div class="redes-fooder">
-      <a href="https://www.facebook.com/"><i class="fab fa-facebook-f icon-redes-fooder" aria-hidden="true"></i></a>
-      <a href="https://www.instagram.com/"><i class="fab fa-instagram icon-redes-fooder" aria-hidden="true"></i></a>
-      <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp icon-redes-fooder" aria-hidden="true"></i></a>   
-    </div>
+  
   </div>
+
   <nav>
     <div class="container_fooder">
       <div class="container_share_screen ">
@@ -89,8 +85,10 @@
     }
    
   </script>
-    <script src="js/chat.js"></script>
-  <script src="./js/script.js"></script>
+  <script src="js/hora.js"></script>
+  <script src="js/sharescreen.js"></script>
+  <script type="text/javascript" src="js/chat.js"></script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>
